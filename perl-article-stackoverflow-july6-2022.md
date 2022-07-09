@@ -1,4 +1,4 @@
-# Why perl is still hugely relevant for solving world’s computing problems
+# Why Perl is still relevant in 2022 
 
 If you love UNIX/Linux/BSD like me, then you have definitely learnt Perl
 and programmed in it. I am pretty certain you have also used Perl more
