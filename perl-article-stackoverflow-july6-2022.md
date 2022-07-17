@@ -20,32 +20,26 @@ software engineering today.
 
 ## What makes it special?
 
-Perl is a high-level language. It is weakly typed , has synchronous
-flow, and is an interpreted language. Perl 5 is open source and free to
-contribute to. 
+Perl is a high-level, interpreted language. It is open source and free to
+contribute to.
 
 Perl’s primary strength was in text processing. Be it a regex-based
 approach or otherwise, Perl is excellent for logfile analysis, text
 manipulation, in-place editing of files, and scouring structured text
 files for specific field values.
 
-Perl is very Unix-friendly. Perl serves as a wrapper around Unix tools and is
-fully integrated into OS semantics. Other languages don’t attempt this. As a
-result, it excels at pipes, file slurping, inter-process communication and other
-geeky tasks. Like C, it can create Unix daemons or server processes that run in
-the background. We can easily invoke a Perl daemon to avoid spending hours
-working on C and avoid several [security
+Perl is very Unix-friendly. It can serve as a wrapper around Unix tools and is
+fully integrated into OS semantics. As a result, it excels at pipes, file
+slurping, inter-process communication and other geeky tasks. It can create Unix
+daemons or server processes that run in the background. We can easily invoke a
+Perl daemon to avoid spending hours working on C and reduce [security
 flaws](https://portswigger.net/daily-swig/c-is-least-secure-programming-language-study-claims#:~:text=The%20top%20vulnerabilities%20found%20in,programming%20language%20in%20the%20list.).
 
 Like [npm](https://www.npmjs.com/) for Node.js, Perl has a vibrant development
 community in [CPAN](https://metacpan.org/), with a vast archive of Perl modules.
 You can find a module to do anything you want. Most modules are written in
-purePerl, though some performance intensive modules have an XS component that
+pure Perl, though some performance intensive modules have an XS component that
 uses C for performance.
-
-Like [npm](https://www.npmjs.com/) for node.js, Perl has a vibrant development
-community in [CPAN](https://metacpan.org/), with a vast archive of Perl modules.
-You can find a module to do anything you want. 
 
 Through CPAN, you can wrap many databases—SQLite, MySQL, Postgres, and
 more—in Perl code using database driver (DBD) modules. These export the
@@ -54,7 +48,7 @@ that hides the complexities of the database.
 
 Perl supports arrays, hashes, and references using which you can code in
 very powerful ways without thinking deeply about data structures or
-algorithms. Most CPAN modules give you both a functional style as well
+algorithms. Most CPAN modules give you both a procedural style as well
 as the object oriented one. By giving you that choice, you can pretty
 much do your task your own way.
 
@@ -65,53 +59,60 @@ files for data fields based on complex regex statements. It is a tool of choice
 for parsing log files. It can quickly edit settings files. Perl is also a natural
 for various format conversions, generating PDFs, HTML, or XML.
 
-In early days of the internet, Perl served as the foundation of a lot of
-basic networking tasks: common gateway interface (CGI), MIME decoding in
-emails, even opening websockets between a client and server. It still
-excels here, and can handle networking tasks without running a whole
-server application.
+Since the early days of the internet, Perl served as the foundation of a lot of
+basic networking tasks: common gateway interface (CGI), MIME decoding in emails,
+or managing websockets between a client and server. It has evolved a lot since
+the early times, becoming a source of inspiration for other ecosystems and
+getting it's inspiration again from other languages to evolve.
 
-For power Unix users, Perl lets you automate nearly any action that you
+For power Unix users, Perl allow to automate nearly any action that you
 like. You can create daemons—small, constantly running programs—that
 will automatically take actions when their conditions are met. 
 
-Testing is at the core of Perl culture, that provide excellent [test toolkits
-and
-infrastructures](http://www.modernperlbooks.com/mt/2009/04/a-test-infected-culture.html).
-Any module uploaded to the CPAN will pass automatically through the *[CPAN
-Testers Reports](http://www.cpantesters.org/page/about.html), a multi-platorm
-testing ground that operate since 1998. Standard Perl tests can also be run in [
-build
-pipelines](https://stackoverflow.com/questions/533553/perl-build-unit-testing-code-coverage-a-complete-working-example).
+Testing is at the core of Perl culture. Excellent [test toolkits and
+infrastructures](http://www.modernperlbooks.com/mt/2009/04/a-test-infected-culture.html)
+lay at the foundation of the community favorites methodologies.. Any module
+uploaded to the CPAN will pass automatically through the *[CPAN Testers
+Reports](http://www.cpantesters.org/page/about.html), a multi-platorm testing
+ground that operate since 1998. Standard Perl tests can also be run in common
+[build
+pipelines](https://stackoverflow.com/questions/533553/perl-build-unit-testing-code-coverage-a-complete-working-example)
+and CI.
 
-## A simpler way to code, with flexibility when needed
+## A flexible and fun way to code
 
-In today’s event-loop-centric asynchronous world of JavaScript, Node.js,
-and TypeScript, Perl offers a very straight-forward code flow, simplicity 
-and control.
+In today’s event-loop-centric asynchronous world of JavaScript, Node.js, and
+TypeScript, Perl developed ways to face the challenges of non blocking
+programming.
 
-The fact that code flows synchronously makes a big difference in
-debugging and getting started writing working code. Perl has supported
-threads for long time, but I have never used them. 
-
-In case you need the asynchronous paradigm, depsite it is not allowed at the Perl's 
-core, it is possible to implement it with modules. An robust example is  
-[`Future::AsyncAwait`](https://metacpan.org/pod/Future::AsyncAwait)) that 
-*provides syntax for deferring and resuming subroutines* with the `async` 
-and `await keywords`. An alternative can be 
-[`Mojo::Promise`](https://metacpan.org/pod/Mojo::Promise), a _Perl-ish 
-implementation of [Promises/A+](https://promisesaplus.com/) and a superset 
-of [ES6 Promises](https://duckduckgo.com/?q=\mdn%20Promise)_.  
+Despite asynchronicity is not a fundamental of Perl's core, it is as always 
+possible to extend the language through CPAN modules. An robust example is 
+[`Future::AsyncAwait`](https://metacpan.org/pod/Future::AsyncAwait)) that
+*provides syntax for deferring and resuming subroutines* with the `async` and
+`await keywords`. An alternative can be
+[`Mojo::Promise`](https://metacpan.org/pod/Mojo::Promise), a _Perl-ish
+implementation of [Promises/A+](https://promisesaplus.com/) and a superset
+of [ES6 Promises](https://duckduckgo.com/?q=\mdn%20Promise)_.
 
 Perl includes a number of specialized operators that process data in
 unique ways. You can use the diamond `<>` operator to eat up any stream,
 file, socket, pipe, named pipe, whatever.
 
-The regex operator `=~` means regular expressions can be included in
-functions very easily. 
+The regex operator `=~` opens the door to the rich world of Perl regular
+expressions, that can reduce many lines of complex code to a couple of *match*
+and *replace* operations.
 
 Perl emphasizes the *get what you want the way you want* philosophy, 
 also known as [TMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it).
+
+Perl is multi-paradigm. In addition to procedural or object-oriented, it allows
+functional programming. Depending of the situation, it allows to choose the most
+accurate programming paradigm. Providing a low level object-oriented system,
+robust object toolkits like [Moose](https://metacpan.org/pod/Moose) can be used
+for production code (from CPAN, not a core module). Such toolkits simplify
+greatly the object oriented paradigm for Perl.
+
+## Looking at some code
 
 Let us examine some code samples to get some perspective by creating a sha256 digest of a string.
 
@@ -128,7 +129,7 @@ hash.update(data);
 console.log(hash.copy().digest('hex'));
 ```
 
-In Perl let's examine two ways (more could be possible). One is the procedural
+In Perl let's examine two ways (*more ways* could be possible). One is the procedural
 approach:
 
 ```perl
@@ -159,21 +160,6 @@ m.update(b"Stack Overflow is cool")
 print(m.hexdigest())
 ```
 
-Perl is multi-paradigm. In addition to procedural or object-oriented, it allows
-functional programming. Depending of the situation, it allows to choose the most
-accurate programming paradigm.
-
-## Garbage collection
-
-For a language *sometimes* considered only good for scripting, it has garbage
-collection. It’s a simple form called [reference
-counting](https://perldotcom.perl.org/article/the-trouble-with-reference-counting/),
-where Perl counts the number of references to a variable and reclaims those
-variables if there are no more references (or if a program leaves the scope that
-a variable was created in). The language itself manage the memory: the
-programmer don't need to take care of it as with the C language `free()` and
-`malloc()` functions.
-
 ## Debugging
 
 Perl has a `-c` switch to just compile the code to check for basic
@@ -186,38 +172,25 @@ to inspect complex objects.
 All those allow to figure out causes in case something does not go as 
 planned. Perl can also be run in debug mode with the `-d` switch.
 
-## Comparing Perl to other languages
+## Comparing to other languages
 
-Now let us compare Perl to other languages once again. What about non
-blocking socket I/O or file read? What about dealing with big data? What
-about binary data?
-
-In all these departments Perl has its muscles to flex. For binary data
-however, you are much better off with C or something. Perl does have
-`ord`, `pack`, and friends. But for text based protocols like SMTP, HTTP,
-and the like, Perl socket I/O is quite nice. Particularly using the
-diamond operator, `<>`, for consuming data from any file descriptor.
-
-What do these things remind you of…that’s right, Unix. Perl is living
-example of how going all the way with Unix philosophy gets things done.
-
-### Perl vs Python
+### Python
 
 Python has a built-in interactive shell where you can easily develop code and
-learn. It is amazing and can helps new comers to got to the point directly
-without having to configure the environment. It can also help to evaluate quick
-statements in everyday's life.
+learn. It is amazing and can helps newcomers to got to the point directly
+without having to configure an entire environment. It can also help to evaluate
+quick statements and prototypes, or just verify some syntax in everyday's life.
 
 In Perl world, interactive shells exists from CPAN. Such examples are
 [Reply](https://metacpan.org/release/Reply) or
 [Devel::REPL](https://metacpan.org/pod/Devel::REPL) an effort to build a modern
 repl.
 
-A similar thing to mention from Perl world that can be similar to REPL
-environments, and a part of it's *folklore* is the [Perl one
+A similar thing to mention from Perl world, that might be similar to REPL
+environments, and a part of it's *folklore*, are the [Perl one
 liners](https://catonmat.net/ftp/perl1line.txt), very short programs that
-operate on lists, on whole file lines, can generate, replace or encode at the
-price of a very little effort.
+operate on lists, whole file lines, can generate, replace or encode at the
+price of a very little effort, usually at the price of very little typing.
 
 A good reason why Python serves as an excellent learner’s programming language
 for that is Python isn't a TIMTOWTDI language at it's core. The fact that it
@@ -236,37 +209,35 @@ objects a little like how Node.js does it.
 Python has Jupyter notebook that takes the power of Python to the
 browser. Python scripts tend to be shorter than Perl in general. Python
 has more economic syntax, excellent saving in lines of code by chaining
-objects, but Perl shines in other areas.
+objects.
 
 Sometimes it is not an apples to apples comparison as each programming
 language has its own benefits and specific uses.
 
-### Perl vs Node.js
+### Node.js
 
 Node.js is object-oriented and asynchronous in it's core.
 
-The Node.js program flow can be scary for beginners. Even experienced
-programmers struggle with code flow and figuring out when a function
-returns. It can lead to callback hell, though promises and async/await
-make things better—if they are used. But the event loop and single
-threaded Node.js flow makes it harder to use for one off tasks.
+It's program flow require a good understanding of non-blocking programming. Even
+experienced programmers struggle with code flow and figuring out when a function
+returns. It can lead to callback hell, though promises and async/await make
+things better—if they are used. But the event loop and single threaded Node.js
+flow makes it harder to use for one off tasks.
 
-Perl is pleasant and more straight-forward. Typically, if you wish to
-use a third-party library to solve a particular problem, you can either
-do it using Node.js or Perl. The open source modules for plugging into
-most third-party libraries exist for both languages.
+If you wish to use a third-party library to solve a particular problem, you can
+either do it using Node.js or Perl. The open source modules for plugging into
+most third-party libraries exist for both languages. Most of the time, Node.js
+relies on package.json and local installations of modules and Node.js. Despite
+Perl wide availability on most systems, this is something that Perl community
+tends to encourage with tools like [`perlbrew`](https://perlbrew.pl/), that
+allows the admin-free installation of Perl and separation of the system `perl`
+(allowing to have many versions installed). `perlbrew` is very similar to nvm
+(the Node Version Manager). Another interesting tool is Carton, a modules
+dependency manager, inspired by Ruby's [Bundler](https://bundler.io/) and
+similar to Node.js `npm`, allowing to track, install, deploy or bundle your
+applications dependencies.
 
-Most of the time, Node.js relies on package.json and local installations of
-modules and Node.js. Despite Perl wide availability on most systems, this is
-something that Perl community tends to encourage with tools like
-[`perlbrew`](https://perlbrew.pl/), that allows the admin-free installation of
-Perl and separation of the system `perl` (allowing to have many versions
-installed). `perlbrew` is very similar to nvm (the Node Version Manager).
-Another interesting tool is Carton, a modules dependency manager, inspired by
-Ruby's [Bundler](https://bundler.io/) and similar to Node.js `npm`, allowing to
-track, install, deploy or bundle your applications dependencies.
-
-### Perl vs ksh/bash
+### ksh or Bash
 
 Well, this is a funny thing to write. Perl could be a contender for
 shell-scripting jobs as it is a scripting language, correct? But Perl
@@ -274,8 +245,9 @@ installation is a factor to consider whether to use it or some shell in
 a resource-constrained environment like Raspberry Pi or something.
 
 A common opinion about shell scripts is that after more than a couple of lines,
-you should consider rewritting them in Perl, Python, Go, anything with libraries
-that will help to handle dayly task easilier. 
+you should consider rewritting them in Perl, Python, Go, Ruby, any high-level
+language you like that allows the use of libraries that will help to handle
+daily task easilier and avoid reinventing the wheel.
 
 ## The future of Perl
 
@@ -303,7 +275,8 @@ practices to the front.
 
 ## Why it is still relevant in 2022
 
-Perl is not going away. That ain’t gonna happen.
+Perl is not going away even if it tends to be less trendy than other modern
+languages.
 
 It is used in production codebases of many
 companies, for tasks as diverse as web development, databases access, log
@@ -321,13 +294,13 @@ by he community. Two notables web frameworks being [Dancer](https://dancer.pm)
 and [Mojolicious](https://mojolicious.org).
 
 In terms of bindings to other libraries and utilities, Perl is as good as other
-choices. For instance, if you wish to talk to
+choices. For instance, communication with
 [libcurl](https://metacpan.org/pod/WWW::Curl) or
 [libtls](https://github.com/rsimoes/Net-GnuTLS) or some third-party open-source
-library or database, then we can often choose the language we like. Here, Perl
-is supported out of the box and you can easily get your job done.
+library or database, can be achieved with any language we like. Here, Perl
+is supported out of the box and provide easy ways to get the job done.
 
-Perl is perfectly capable of keeping up with modern trends. Perl we write today
+Perl is perfectly capable of keeping up with modern trends. Code we write today
 is not the same as that which we wrote 20 years ago. Other languages have
 influenced the language as it became and we can expect that to continue and the
 ecosystem to grow.
